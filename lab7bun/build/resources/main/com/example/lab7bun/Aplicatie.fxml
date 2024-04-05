@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.lab7bun.AplicatieController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+    <TabPane fx:id="tabPane" layoutX="4.0" prefHeight="442.0" prefWidth="707.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab text="Prieteni">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <ListView fx:id="friendshipList" layoutY="-2.0" prefHeight="342.0" prefWidth="474.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            <Button layoutX="600.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleDeletePrietenie" text="Sterge prieten" />
+                            <VBox layoutX="600.0" layoutY="190.0" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                <TextField id="NrInregistrariPrietenie" fx:id="nrinregistrariPrietenie" promptText="Nr inregistrari Prietenie:" />
+                                <TextField id="PaginaCurentaPrietenie" fx:id="paginaCurentaPrietenie" promptText="Pagina Prietenie:" />
+                                <Button mnemonicParsing="false" onAction="#handlePaginaPrietenie" text="⟲ prietenie" />
+                                <HBox>
+                                    <Button mnemonicParsing="false" onAction="#handleInapoiPrietenie" text="←" />
+                                    <Button mnemonicParsing="false" onAction="#handleInaintePrietenie" text="→" />
+                                </HBox>
+                            </VBox>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Mesaje">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <HBox minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="600.0">
+                                <children>
+                                    <ListView fx:id="userList" prefHeight="380.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <ListView fx:id="mesajeList" prefHeight="380.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                </children></HBox>
+                            <Button layoutX="800.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleTrimiteCerere" prefHeight="30.0" prefWidth="103.0" text="Trimite cerere" />
+                            <VBox layoutX="800.0" layoutY="200.0" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                <TextField id="NrInregistrariUser" fx:id="nrinregistrariUser" promptText="Nr inregistrari User:" />
+                                <TextField id="PaginaCurentaUser" fx:id="paginaCurentaUser" promptText="Pagina User:" />
+                                <Button mnemonicParsing="false" onAction="#handlePaginaUser" text="⟲ user" />
+                                <HBox>
+                                    <Button mnemonicParsing="false" onAction="#handleInapoiUser" text="←" />
+                                    <Button mnemonicParsing="false" onAction="#handleInainteUser" text="→" />
+                                </HBox>
+                            </VBox>
+                            <VBox layoutX="800.0" layoutY="400.0" prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                <TextField id="Msg" fx:id="mesaj" promptText="Text mesaj:" />
+                                <Button mnemonicParsing="false" onAction="#handleTrimiteMesaj" text="Trimite mesaj" />
+                                <!-- <Button mnemonicParsing="false" onAction="#handleTrimiteMesajMaiMultiUser" text="Forward mesaj" /> -->
+                                <Button mnemonicParsing="false" onAction="#handleConversatie" text="Conversatie" />
+                                <Button mnemonicParsing="false" onAction="#handleExitConv" text="Iesire conv" />
+                            </VBox>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Cereri de prietenie primite">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <ListView fx:id="cerereListPrimit" prefHeight="342.0" prefWidth="467.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            <Button layoutX="600.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleAcceptaCerere" text="Accepta" />
+                            <Button layoutX="600.0" layoutY="158.0" mnemonicParsing="false" onAction="#handleRespingeCerere" text="Respinge" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Cereri de prietenie trimise">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <ListView fx:id="cerereListTrimis" prefHeight="386.0" prefWidth="513.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            <Button layoutX="600.0" layoutY="168.0" mnemonicParsing="false" onAction="#handleStergeCerere" text="Cancel" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Statistici">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <ListView fx:id="statisticiList" layoutY="-2.0" prefHeight="342.0" prefWidth="474.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            <VBox layoutX="600.0" layoutY="70.0" prefHeight="40.0" prefWidth="400.0" spacing="20.0">
+                                <Label text="Introdu nr minim de prieteni/luna (in cifre)/stringul dorit pt filtrare!" textFill="#691eea" wrapText="true"/>
+                                <TextField id="statistica" fx:id="statistica" promptText="Nr minim/Luna/String:" />
+                                <Button mnemonicParsing="false" onAction="#handleNrComunitati" text="Nr comunitati" />
+                                <Button mnemonicParsing="false" onAction="#handleComunitateSociabila" text="Comunitate sociabila" />
+                                <Button mnemonicParsing="false" onAction="#handleNrMinPrieteni" text="Nr minim prieteni" />
+                                <Button mnemonicParsing="false" onAction="#handleLunaPrietenie" text="Luna prietenie" />
+                                <Button mnemonicParsing="false" onAction="#handleStrUser" text="String user" />
+                                <Button mnemonicParsing="false" onAction="#handleRefresh" text="Refresh" />
+                            </VBox>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+            <Tab text="Setari">
+                <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                            <Text fx:id="numeUtilizator" layoutX="500.0" layoutY="200.0" />
+                            <Button layoutX="500.0" layoutY="300.0" mnemonicParsing="false" onAction="#deleteAccount" text="Delete Account" />
+                            <Button layoutX="500.0" layoutY="400.0" mnemonicParsing="false" onAction="#logOut" text="Log out" />
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
+        </tabs>
+    </TabPane>
+</children>
+</AnchorPane>

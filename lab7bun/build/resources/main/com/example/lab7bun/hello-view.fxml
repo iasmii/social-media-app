@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1580.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lab7bun.HelloController">
+    <children>
+        <SplitPane dividerPositions="0.750965250965251" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <SplitPane prefHeight="329.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <HBox minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                    <children>
+                                        <ListView fx:id="userList" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                                        </ListView>
+                                        <ListView fx:id="friendshipList" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                                        </ListView>
+                                        <ListView fx:id="mesajeList" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="590.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                                        </ListView>
+                                        <ListView fx:id="cerereList" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="440.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                                        </ListView>
+                                    </children>
+                                </HBox>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="1600.0">
+                    <children>
+                        <HBox prefHeight="50.0" prefWidth="1580.0" spacing="20.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <TextField id="Nume 1" fx:id="nume1" promptText="Nume 1:" />
+                                    <TextField id="Preume 1" fx:id="prenume1" promptText="Prenume 1:" />
+                                    <TextField id="Nume 2" fx:id="nume2" promptText="Nume 2:" />
+                                    <TextField id="Prenume 2" fx:id="prenume2" promptText="Preume 2:" />
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <TextField id="NrLuna" fx:id="nrluna" promptText="Nr minim/Luna:" />
+                                    <TextField id="Str" fx:id="str" promptText="String/Sir id1,id2,..:" />
+                                    <TextField id="Msg" fx:id="mesaj" promptText="Text mesaj:" />
+                                    <TextField id="Reply" fx:id="reply" promptText="Reply:" />
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <Button mnemonicParsing="false" onAction="#handleAddUser" text="Adauga utilizator" />
+                                    <Button mnemonicParsing="false" onAction="#handleDeleteUser" text="Sterge utilizator" />
+                                    <Button mnemonicParsing="false" onAction="#handleUpdateUser" text="Update utilizator" />
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <Button mnemonicParsing="false" onAction="#handleAddPrietenie" prefHeight="26.0" prefWidth="122.0" text="Adauga prietenie" />
+                                    <Button mnemonicParsing="false" onAction="#handleDeletePrietenie" text="Sterge prietenie" />
+                                    <Button mnemonicParsing="false" onAction="#handleNrComunitati" text="Nr comunitati" />
+                                    <Button mnemonicParsing="false" onAction="#handleComunitateSociabila" text="Comunitate sociabila" />
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <Button mnemonicParsing="false" onAction="#handleNrMinPrieteni" text="Nr minim prieteni" />
+                                    <Button mnemonicParsing="false" onAction="#handleLunaPrietenie" text="Luna prietenie" textOverrun="CLIP" />
+                                    <Button mnemonicParsing="false" onAction="#handleStrUser" text="String user" />
+                                    <Button mnemonicParsing="false" onAction="#handleRefresh" text="Refresh" />
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <Button mnemonicParsing="false" onAction="#handleTrimiteMesaj" text="Trimite mesaj" />
+                                    <Button mnemonicParsing="false" onAction="#handleTrimiteMesajMaiMultiUser" text="Forward mesaj" />
+                                    <Button mnemonicParsing="false" onAction="#handleConversatie" text="Conversatie" />
+                                    <Button mnemonicParsing="false" onAction="#handleExitConv" text="Iesire conv" />
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <Button mnemonicParsing="false" onAction="#handleTrimiteCerere" text="Trimite cerere" />
+                                    <Button mnemonicParsing="false" onAction="#handleAcceptaCerere" text="Accepta cerere" />
+                                    <Button mnemonicParsing="false" onAction="#handleRespingeCerere" text="Respinge cerere" />
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <TextField id="NrInregistrariUser" fx:id="nrinregistrariUser" promptText="Nr inregistrari User:" />
+                                    <TextField id="PaginaCurentaUser" fx:id="paginaCurentaUser" promptText="Pagina User:" />
+                                    <Button mnemonicParsing="false" onAction="#handlePaginaUser" text="⟲ user" />
+                                    <HBox>
+                                        <Button mnemonicParsing="false" onAction="#handleInapoiUser" text="←" />
+                                        <Button mnemonicParsing="false" onAction="#handleInainteUser" text="→" />
+                                    </HBox>
+                                </VBox>
+                                <VBox prefHeight="40.0" prefWidth="100.0" spacing="20.0">
+                                    <TextField id="NrInregistrariPrietenie" fx:id="nrinregistrariPrietenie" promptText="Nr inregistrari Prietenie:" />
+                                    <TextField id="PaginaCurentaPrietenie" fx:id="paginaCurentaPrietenie" promptText="Pagina Prietenie:" />
+                                    <Button mnemonicParsing="false" onAction="#handlePaginaPrietenie" text="⟲ prietenie" />
+                                    <HBox>
+                                        <Button mnemonicParsing="false" onAction="#handleInapoiPrietenie" text="←" />
+                                        <Button mnemonicParsing="false" onAction="#handleInaintePrietenie" text="→" />
+                                    </HBox>
+                                </VBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+
+</AnchorPane>

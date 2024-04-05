@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.lab7bun.SignUpController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+    <Label layoutX="168.0" layoutY="30.0" text="Creaza un cont!" textFill="#691eea">
+    </Label>
+
+    <TextField fx:id="nume" layoutX="204.0" layoutY="80.0" prefHeight="26.0" prefWidth="190.0" promptText="nume" />
+    <TextField fx:id="prenume" layoutX="205.0" layoutY="120.0"  prefHeight="26.0" prefWidth="190.0" promptText="prenume" />
+    <TextField fx:id="password" layoutX="204.0" layoutY="170.0"  prefHeight="26.0" prefWidth="190.0" promptText="password" />
+    <TextField fx:id="password_confirm" layoutX="204.0" layoutY="210.0"  prefHeight="26.0" prefWidth="190.0" promptText="confirm password" />
+
+    <Button fx:id="creeazaCont" layoutX="237.0" layoutY="260.0" mnemonicParsing="false" onAction="#onCreeazaContClick" prefHeight="30.0" prefWidth="126.0" text="Creeaza contul!" textFill="#2500f7">
+    </Button>
+        <Button fx:id="logInButton" layoutX="237.0" layoutY="300.0" mnemonicParsing="false" onAction="#inapoiLogIn" prefHeight="30.0" prefWidth="126.0" text="Log In" textFill="#2500f7">
+    </Button>
+    </children>
+</AnchorPane>
